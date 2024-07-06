@@ -6,9 +6,13 @@ class FavoritesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[900],
       body: Center(
           child: Container(
-        child: Text("Favourites"),
+        child: Text(
+          "Favourites",
+          style: TextStyle(color: Colors.white),
+        ),
       )),
     );
   }

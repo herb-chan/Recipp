@@ -6,9 +6,13 @@ class RecipesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[900],
       body: Center(
           child: Container(
-        child: Text("Recipes"),
+        child: Text(
+          "Recipes",
+          style: TextStyle(color: Colors.white),
+        ),
       )),
     );
   }
