@@ -49,13 +49,16 @@ class _StartPageState extends State<StartPage> {
           selectedItemColor: Theme.of(context).colorScheme.primary,
           unselectedItemColor: Theme.of(context).colorScheme.inversePrimary,
           items: [
-            BottomNavigationBarItem(icon: Icon(Icons.book), label: "Recipes"),
             BottomNavigationBarItem(
-                icon: Icon(Icons.favorite), label: "Favourites"),
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-            BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
+                icon: Icon(Icons.book_outlined), label: "Recipes"),
             BottomNavigationBarItem(
-                icon: Icon(Icons.settings), label: "Settings"),
+                icon: Icon(Icons.favorite_outline), label: "Favourites"),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.home_outlined), label: "Home"),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.person_outline), label: "Profile"),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.settings_outlined), label: "Settings"),
           ],
         ),
       ),

@@ -13,11 +13,6 @@ class SettingsPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              "Settings",
-              style: TextStyle(
-                  color: Theme.of(context).colorScheme.tertiary, fontSize: 24),
-            ),
             ElevatedButton(
               onPressed: () {
                 Provider.of<ThemeProvider>(context, listen: false)
