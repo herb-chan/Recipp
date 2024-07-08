@@ -35,7 +35,7 @@ class _StartPageState extends State<StartPage> {
       body: _pages[_selected_index],
       bottomNavigationBar: Theme(
         data: Theme.of(context).copyWith(
-          canvasColor: Colors.grey[900],
+          canvasColor: Theme.of(context).colorScheme.surface,
           splashColor: Colors.transparent,
           highlightColor: Colors.transparent,
         ),
@@ -45,8 +45,9 @@ class _StartPageState extends State<StartPage> {
           onTap: _navigate_bottom_bar,
           showSelectedLabels: false,
           showUnselectedLabels: false,
-          selectedItemColor: Colors.grey[500],
-          unselectedItemColor: Colors.grey[700],
+          enableFeedback: false,
+          selectedItemColor: Theme.of(context).colorScheme.primary,
+          unselectedItemColor: Theme.of(context).colorScheme.inversePrimary,
           items: [
             BottomNavigationBarItem(icon: Icon(Icons.book), label: "Recipes"),
             BottomNavigationBarItem(
