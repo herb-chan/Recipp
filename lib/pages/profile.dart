@@ -8,12 +8,11 @@ class ProfilePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.surface,
       body: Center(
-          child: Container(
         child: Text(
           "Profile",
           style: TextStyle(color: Theme.of(context).colorScheme.tertiary),
         ),
-      )),
+      ),
     );
   }
 }

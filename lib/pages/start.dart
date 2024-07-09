@@ -13,26 +13,26 @@ class StartPage extends StatefulWidget {
 }
 
 class _StartPageState extends State<StartPage> {
-  int _selected_index = 2;
+  int _selectedIndex = 2;
 
-  final List<Widget> _pages = [
+  final List<Widget> _pages = const [
     RecipesPage(),
     FavoritesPage(),
     HomePage(),
     ProfilePage(),
-    SettingsPage()
+    SettingsPage(),
   ];
 
-  void _navigate_bottom_bar(int index) {
+  void _onItemTapped(int index) {
     setState(() {
-      _selected_index = index;
+      _selectedIndex = index;
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _pages[_selected_index],
+      body: _pages[_selectedIndex],
       bottomNavigationBar: Theme(
         data: Theme.of(context).copyWith(
           canvasColor: Theme.of(context).colorScheme.surface,
@@ -41,18 +41,18 @@ class _StartPageState extends State<StartPage> {
         ),
         child: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
-          currentIndex: _selected_index,
-          onTap: _navigate_bottom_bar,
+          currentIndex: _selectedIndex,
+          onTap: _onItemTapped,
           showSelectedLabels: false,
           showUnselectedLabels: false,
           enableFeedback: false,
           selectedItemColor: Theme.of(context).colorScheme.primary,
           unselectedItemColor: Theme.of(context).colorScheme.inversePrimary,
-          items: [
+          items: const [
             BottomNavigationBarItem(
                 icon: Icon(Icons.book_outlined), label: "Recipes"),
             BottomNavigationBarItem(
-                icon: Icon(Icons.favorite_outline), label: "Favourites"),
+                icon: Icon(Icons.favorite_outline), label: "Favorites"),
             BottomNavigationBarItem(
                 icon: Icon(Icons.home_outlined), label: "Home"),
             BottomNavigationBarItem(

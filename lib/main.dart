@@ -10,10 +10,12 @@ import 'package:recipp/themes/theme_provider.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  runApp(ChangeNotifierProvider(
-    create: (context) => ThemeProvider(),
-    child: const MyApp(),
-  ));
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => ThemeProvider(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -22,15 +24,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: StartPage(),
-        theme: Provider.of<ThemeProvider>(context).themeData,
-        routes: {
-          '/home': (context) => HomePage(),
-          '/recipes': (context) => RecipesPage(),
-          '/favorites': (context) => FavoritesPage(),
-          '/profile': (context) => ProfilePage(),
-          '/settings': (context) => SettingsPage(),
-        });
+      debugShowCheckedModeBanner: false,
+      home: StartPage(),
+      theme: Provider.of<ThemeProvider>(context).themeData,
+      routes: {
+        '/home': (context) => HomePage(),
+        '/recipes': (context) => RecipesPage(),
+        '/favorites': (context) => FavoritesPage(),
+        '/profile': (context) => ProfilePage(),
+        '/settings': (context) => SettingsPage(),
+      },
+    );
   }
 }

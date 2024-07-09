@@ -6,25 +6,28 @@ class FavoritesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[900],
+      backgroundColor: Theme.of(context).colorScheme.surface,
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: ListView.builder(
           itemCount: 10, // Placeholder for number of favorite recipes
           itemBuilder: (context, index) {
             return Card(
-              color: Colors.grey[800],
+              color: Theme.of(context).colorScheme.secondary,
               child: ListTile(
                 title: Text(
                   'Favorite Recipe Title',
-                  style: TextStyle(color: Colors.white),
+                  style:
+                      TextStyle(color: Theme.of(context).colorScheme.tertiary),
                 ),
                 subtitle: Text(
                   'Short description of the favorite recipe.',
-                  style: TextStyle(color: Colors.grey[400]),
+                  style:
+                      TextStyle(color: Theme.of(context).colorScheme.primary),
                 ),
                 trailing: IconButton(
-                  icon: Icon(Icons.delete, color: Colors.red),
+                  icon: Icon(Icons.delete,
+                      color: Theme.of(context).colorScheme.error),
                   onPressed: () {
                     // Add your remove favorite functionality here
                   },
