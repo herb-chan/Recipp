@@ -18,26 +18,37 @@ class RecipeDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        leading: IconButton(
+          icon: const Icon(Icons.reply), // Change the icon here
+          onPressed: () {
+            Navigator.of(context)
+                .pop(); // Navigate back when close icon is tapped
+          },
+        ),
+        title: Text(
+          title,
+          style: TextStyle(color: Theme.of(context).colorScheme.onSurface),
+        ),
+        backgroundColor: Theme.of(context).colorScheme.surface,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.asset("assets/spaghetti_carbonara.jpg"),
-            SizedBox(height: 16.0),
+            Image.asset(imagePath),
+            const SizedBox(height: 16.0),
             Text(
               title,
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 8.0),
+            const SizedBox(height: 8.0),
             Text(
               description,
-              style: TextStyle(fontSize: 16),
+              style: const TextStyle(fontSize: 16),
             ),
-            SizedBox(height: 16.0),
-            Text(
+            const SizedBox(height: 16.0),
+            const Text(
               'Steps:',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),

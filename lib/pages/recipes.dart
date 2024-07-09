@@ -22,12 +22,15 @@ class RecipesPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final recipes = [
+    const recipes = [
       {
         'title': 'Spaghetti Carbonara',
         'description':
             'A classic Italian pasta dish made with eggs, cheese, pancetta, and pepper.',
-        'imagePath': 'assets/placeholder_meals/spaghetti_carbonara.jpg',
+        'imagePath': 'assets/spaghetti_carbonara.jpg',
+        'prepTime': '20 mins',
+        'servingSize': '2 servings',
+        'category': 'Italian',
         'steps': [
           'Boil the pasta.',
           'Cook the pancetta.',
@@ -40,102 +43,14 @@ class RecipesPage extends StatelessWidget {
         'description':
             'Creamy Alfredo sauce with grilled chicken over fettuccine pasta.',
         'imagePath': 'assets/chicken_alfredo.jpg',
+        'prepTime': '30 mins',
+        'servingSize': '4 servings',
+        'category': 'Italian',
         'steps': [
           'Cook the pasta.',
           'Prepare the Alfredo sauce.',
           'Grill the chicken.',
           'Mix all together.'
-        ],
-      },
-      {
-        'title': 'Beef Tacos',
-        'description': 'Spicy beef tacos with fresh toppings.',
-        'imagePath': 'assets/beef_tacos.jpg',
-        'steps': [
-          'Cook the beef with spices.',
-          'Prepare the toppings.',
-          'Assemble the tacos.',
-          'Serve with lime wedges.'
-        ],
-      },
-      {
-        'title': 'Caesar Salad',
-        'description': 'Classic Caesar salad with homemade dressing.',
-        'imagePath': 'assets/caesar_salad.jpg',
-        'steps': [
-          'Prepare the lettuce.',
-          'Make the Caesar dressing.',
-          'Toss the salad with dressing.',
-          'Add croutons and Parmesan.'
-        ],
-      },
-      {
-        'title': 'Margherita Pizza',
-        'description':
-            'Traditional Italian pizza with tomato, mozzarella, and basil.',
-        'imagePath': 'assets/margherita_pizza.jpg',
-        'steps': [
-          'Prepare the dough.',
-          'Spread tomato sauce.',
-          'Add mozzarella and basil.',
-          'Bake in the oven.'
-        ],
-      },
-      {
-        'title': 'Pad Thai',
-        'description':
-            'A popular Thai noodle dish with shrimp, tofu, and peanuts.',
-        'imagePath': 'assets/pad_thai.jpg',
-        'steps': [
-          'Cook the noodles.',
-          'Stir-fry shrimp and tofu.',
-          'Add noodles and sauce.',
-          'Garnish with peanuts and lime.'
-        ],
-      },
-      {
-        'title': 'Veggie Stir-Fry',
-        'description': 'Colorful stir-fried vegetables with a savory sauce.',
-        'imagePath': 'assets/veggie_stir_fry.jpg',
-        'steps': [
-          'Chop the vegetables.',
-          'Stir-fry the veggies.',
-          'Add the sauce.',
-          'Serve with rice.'
-        ],
-      },
-      {
-        'title': 'Beef Stroganoff',
-        'description': 'Creamy beef stroganoff served over egg noodles.',
-        'imagePath': 'assets/beef_stroganoff.jpg',
-        'steps': [
-          'Cook the beef.',
-          'Prepare the sauce.',
-          'Mix with cooked noodles.',
-          'Garnish with parsley.'
-        ],
-      },
-      {
-        'title': 'Greek Salad',
-        'description':
-            'Fresh salad with tomatoes, cucumbers, olives, and feta cheese.',
-        'imagePath': 'assets/greek_salad.jpg',
-        'steps': [
-          'Chop the vegetables.',
-          'Mix in a bowl.',
-          'Add feta cheese.',
-          'Drizzle with olive oil and vinegar.'
-        ],
-      },
-      {
-        'title': 'Chocolate Brownies',
-        'description': 'Rich and fudgy chocolate brownies.',
-        'imagePath': 'assets/chocolate_brownies.jpg',
-        'steps': [
-          'Prepare the batter.',
-          'Pour into a baking pan.',
-          'Bake in the oven.',
-          'Let cool before cutting.'
         ],
       },
     ];
@@ -146,18 +61,18 @@ class RecipesPage extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            TextField(
+            const TextField(
               decoration: InputDecoration(
                 hintText: 'Search recipes...',
                 filled: true,
                 fillColor: Colors.white,
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8.0),
+                  borderRadius: BorderRadius.all(Radius.circular(8.0)),
                   borderSide: BorderSide.none,
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Expanded(
               child: ListView.builder(
                 itemCount: recipes.length,
@@ -166,6 +81,10 @@ class RecipesPage extends StatelessWidget {
                   return RecipeCard(
                     title: recipe['title'] as String,
                     description: recipe['description'] as String,
+                    imagePath: recipe['imagePath'] as String,
+                    prepTime: recipe['prepTime'] as String,
+                    servingSize: recipe['servingSize'] as String,
+                    category: recipe['category'] as String,
                     onTap: () => _navigateToRecipeDetail(
                       context,
                       recipe['title'] as String,
