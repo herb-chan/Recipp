@@ -83,17 +83,17 @@ class RecipeCard extends StatelessWidget {
                         children: [
                           _buildDetailRow(
                             context,
-                            Icons.schedule_outlined,
+                            Icons.schedule,
                             prepTime,
                           ),
                           _buildDetailRow(
                             context,
-                            Icons.group_outlined,
+                            Icons.group,
                             servingSize,
                           ),
                           _buildDetailRow(
                             context,
-                            Icons.dinner_dining_outlined,
+                            Icons.flag,
                             category,
                           ),
                         ],

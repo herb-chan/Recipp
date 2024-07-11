@@ -223,7 +223,7 @@
         "title": "Lasagna",
         "description": "Classic Italian pasta dish with layers of pasta, meat sauce, and creamy cheese filling.",
         "imagePath": "assets/images/lasagna.jpg",
-        "prepTime": "1 hour 30 mins",
+        "prepTime": "90 mins",
         "servingSize": "6 servings",
         "category": "Italian",
         "steps": [
